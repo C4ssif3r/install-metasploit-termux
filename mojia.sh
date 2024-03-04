@@ -13,46 +13,45 @@ mojia_banner() {
 "         ┛"
 )
 
-    echo -e "\e[34m" # Blue color
+    echo -e "\e[31m"
     for line in "${banner[@]}"; do
         printf "%*s\n" $(( (${#line}) / 2 )) "$line"
     done
-    echo -e "\e[0m" # Reset color
+    echo -e "\e[0m"
 }
 
 clear
 mojia_banner
 
 
-echo "\nPLZ WAIT ...\nMojia going to install msf6..."
+echo -e "\n\e[32mPLZ WAIT ...\nMojia going to install msf6...\e[0m"
 source <(echo "c3Bpbm5lcj0oICd8JyAnLycgJy0nICdcJyApOwoKY291bnQoKXsKICBzcGluICYKICBwaWQ9JCEKICBmb3IgaSBpbiBgc2VxIDEgMTBgCiAgZG8KICAgIHNsZWVwIDE7CiAgZG9uZQoKICBraWxsICRwaWQgIAp9CgpzcGluKCl7CiAgd2hpbGUgWyAxIF0KICBkbyAKICAgIGZvciBpIGluICR7c3Bpbm5lcltAXX07IAogICAgZG8gCiAgICAgIGVjaG8gLW5lICJcciRpIjsKICAgICAgc2xlZXAgMC4yOwogICAgZG9uZTsKICBkb25lCn0KCmNvdW50" | base64 -d)
 
 # Dependencies
-echo "\n\n★ mojia now go to installing Dependencies...\n"
+echo -e "\n\n\e[32m★ mojia now go to installing Dependencies...\n\e[0m"
 pkg update -y
 pkg upgrade -y -o Dpkg::Options::="--force-confnew"
 pkg install -y binutils python autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
 python3 -m pip install requests
 
 # Fix .rb Big Decimal 
-#center "* Fix ruby BigDecimal"
 #source <(curl -sL https://github.com/termux/termux-packages/files/2912002/fix-ruby-bigdecimal.sh.txt)
 
 # del old msf
-echo "\n\n★ deleting old msf6 folder...\n"
+echo -e "\n\n\e[32m★ deleting old msf6 folder...\n\e[0m"
 if [ -d "${PREFIX}/opt/metasploit-framework" ]; then
   rm -rf ${PREFIX}/opt/metasploit-framework
 fi
 
 # Download Msf 6
-echo "\n\n★ mojia now Downloading msf6 ...\n"
+echo -e "\n\n\e[32m★ mojia now Downloading msf6 ...\n\e[0m"
 if [ ! -d "${PREFIX}/opt" ]; then
   mkdir ${PREFIX}/opt
 fi
 git clone https://github.com/rapid7/metasploit-framework.git --depth=1 ${PREFIX}/opt/metasploit-framework
 
 # Install
-center "\n\n★Mojia msf installer ...\n"
+echo -e "\n\n\e[32m★Mojia msf installer ...\n\e[0m"
 cd ${PREFIX}/opt/metasploit-framework
 gem install bundler
 NOKOGIRI_VERSION=$(cat Gemfile.lock | grep -i nokogiri | sed 's/nokogiri [\(\)]/(/g' | cut -d ' ' -f 5 | grep -oP "(.).[[:digit:]][\w+]?[.].")
