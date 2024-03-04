@@ -78,6 +78,6 @@ termux-elf-cleaner ${PREFIX}/lib/ruby/gems/*/gems/pg-*/lib/pg_ext.so
 
 # print success 
 echo -e "\033[32m" 
-center "Mojia msf Installer complete✓"
+echo -e "Mojia msf Installer complete✓"
 echo -e "\nRUN Metasploit using this command: msfconsole"
 echo -e "\033[0m"
