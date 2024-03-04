@@ -22,6 +22,10 @@
 source <(curl -fsSL https://raw.githubusercontent.com/C4ssif3r/install-metasploit-termux/main/mojia.sh)
 ```
 
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
 + **manual installing ↓**
 
 
@@ -35,6 +39,29 @@ chmod +x metasploit.sh
 
 ./metasploit.sh
 ```
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
+##### Fix ruby BigDecimal (if get error BigDecimal)
+
+```bash
+source <(curl -sL https://github.com/termux/termux-packages/files/2912002/fix-ruby-bigdecimal.sh.txt)
+```
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+- note:
+    + by overriding cflags nokogiri will install or you can simply declare a void function
+
+    + you might have seen this error while installing nokogiri 'xmlSetStructuredErrorFunc((void *)rb_error_list, Nokogiri_error_array_pusher);'
+
+    + solution : void xmlSetStructuredErrorFunc(void *rb_error_list, void *Nokogiri_error_array_pusher); you can set any parameter name
+
+    + for sake of simplicity tweaking cflags is better than declaring a void function for every c file
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
