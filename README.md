@@ -19,7 +19,7 @@
 
 
 ```bash
-source <(curl -fsSL )
+source <(curl -fsSL https://raw.githubusercontent.com/C4ssif3r/install-metasploit-termux/main/mojia.sh)
 ```
 
 + **manual installing ↓**
@@ -29,9 +29,16 @@ source <(curl -fsSL )
 
 apt install wget -y
 
-wget https://github.com/gushmazuko/metasploit_in_termux/raw/master/metasploit.sh
+wget https://raw.githubusercontent.com/C4ssif3r/install-metasploit-termux/main/mojia.sh
 
 chmod +x metasploit.sh
 
 ./metasploit.sh
 ```
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+**if you gave error, message me on**
+
+[![My Telegram](https://img.shields.io/badge/Telegram-100000?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/AboutMji)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
